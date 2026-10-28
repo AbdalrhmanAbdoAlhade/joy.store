@@ -1,0 +1,121 @@
+/* =========================================================================
+   JOY — Design Tokens
+   -------------------------------------------------------------------------
+   Design language: bright, playful and rounded, aimed at children AND their
+   parents (so still legible and calm, not noisy).
+
+   Rules encoded here come from the interface-polish guidance:
+   - Concentric radii  → a small, predictable radius scale so that
+                          outerRadius = innerRadius + padding always resolves.
+   - Shadows, not borders → elevation uses transparent layered shadows;
+                          borders are reserved for structure/state.
+   - Motion tokens      → one ease curve and a small duration scale, so every
+                          transition in the app feels like the same hand.
+   ========================================================================= */
+
+@theme {
+  /* ---------- Color: the JOY candy palette ---------- */
+  --color-joy-coral: #ff5a5f;
+  /* Deep variant: doubles as *text* on light surfaces (needs AA 4.5) and as
+     a white-text fill (sale badge, cart count). Kept deeper than `coral`
+     so the sticker-shadow edge under vivid-coral buttons stays visible. */
+  --color-joy-coral-dark: #c92f36;
+  --color-joy-coral-soft: #ffe9ea;
+
+  --color-joy-sun: #ffc93c;
+  --color-joy-sun-dark: #e0a600;
+  --color-joy-sun-soft: #fff5da;
+
+  --color-joy-mint: #2ec4b6;
+  /* Darkened from #1d9c90: the old value measured ~3.1:1 on mint-soft. */
+  --color-joy-mint-dark: #0f7a70;
+  --color-joy-mint-soft: #e2f8f5;
+
+  --color-joy-grape: #6f55e8;
+  --color-joy-grape-dark: #5f45e0;
+  --color-joy-grape-soft: #efeaff;
+
+  --color-joy-sky: #4da8ff;
+  /* Darkened from #2b8ceb: the old value measured 3.08:1 on sky-soft. */
+  --color-joy-sky-dark: #1a66c2;
+  --color-joy-sky-soft: #e6f3ff;
+
+  --color-joy-pink: #ff8fab;
+  --color-joy-pink-soft: #ffeaf1;
+
+  /* ---------- Color: neutrals (warm, never cold grey) ---------- */
+  --color-joy-cream: #fff8f0;
+  --color-joy-paper: #ffffff;
+  --color-joy-ink: #22252e;
+  --color-joy-ink-soft: #4a4f5c;
+  /* Darkened from #767c8a: the old value measured 4.18:1 on white and
+     4.58:1 on cream — below WCAG AA for the caption sizes that use it. */
+  --color-joy-muted: #6b7180;
+  --color-joy-line: #efe7dd;
+  --color-joy-line-strong: #e0d5c8;
+  --color-joy-overlay: rgb(34 37 46 / 0.45);
+
+  /* ---------- Radii: concentric scale ----------
+     padding 8  → outer 20 (12 + 8) / inner 12
+     padding 12 → outer 28 (16 + 12) / inner 16                      */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius-pill: 999px;
+
+  /* ---------- Elevation: layered, transparent ---------- */
+  --shadow-xs: 0 1px 2px rgb(34 37 46 / 0.04);
+  --shadow-sm:
+    0 1px 2px rgb(34 37 46 / 0.04),
+    0 4px 12px rgb(34 37 46 / 0.06);
+  --shadow-md:
+    0 2px 4px rgb(34 37 46 / 0.04),
+    0 10px 24px rgb(34 37 46 / 0.08);
+  --shadow-lg:
+    0 4px 8px rgb(34 37 46 / 0.05),
+    0 20px 40px rgb(34 37 46 / 0.1);
+  --shadow-pop:
+    0 6px 12px rgb(34 37 46 / 0.06),
+    0 28px 56px rgb(34 37 46 / 0.14);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 450ms;
+
+  /* ---------- Type ---------- */
+  --font-display: 'Baloo Bhaijaan 2', 'Cairo', ui-rounded, system-ui, sans-serif;
+  --font-body: 'Cairo', ui-rounded, system-ui, sans-serif;
+
+  /* ---------- Layout ---------- */
+  --spacing-gutter: 1rem;
+  --header-height: 4.5rem;
+}
+
+/* ---------- Product-level aliases used across the app ---------- */
+@theme {
+  --color-primary: var(--color-joy-coral);
+  --color-primary-dark: var(--color-joy-coral-dark);
+  --color-primary-soft: var(--color-joy-coral-soft);
+  --color-accent: var(--color-joy-sun);
+  --color-surface: var(--color-joy-paper);
+  --color-background: var(--color-joy-cream);
+  --color-foreground: var(--color-joy-ink);
+  --color-muted-fg: var(--color-joy-muted);
+  --color-border-subtle: var(--color-joy-line);
+
+  --radius-control: var(--radius-md);
+  --radius-card: var(--radius-lg);
+  --radius-panel: var(--radius-2xl);
+
+  --shadow-card: var(--shadow-sm);
+  --shadow-card-hover: var(--shadow-md);
+}

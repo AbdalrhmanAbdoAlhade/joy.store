@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JOY">
+  <!--
+    JOY mark, drawn rather than set in type so it renders identically in a
+    browser tab (no webfont). Coral gradient tile matches the header logo
+    tile; the chunky round-cap "J" reads down to 16px.
+  -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff7062" />
+      <stop offset="1" stop-color="#ff5a5f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="url(#tile)" />
+
+  <!-- J: stem + partial hook, stroked with round caps for a soft toy feel -->
+  <path
+    d="M41 13 V33 a12 12 0 0 1 -20 9"
+    fill="none"
+    stroke="#22252e"
+    stroke-width="9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Gold sparkle accent (joy-sun), sitting in the open top-left corner -->
+  <path
+    d="M15.5 8.5 l2.4 5.1 5.1 2.4 -5.1 2.4 -2.4 5.1 -2.4 -5.1 -5.1 -2.4 5.1 -2.4 z"
+    fill="#ffc93c"
+  />
+</svg>
